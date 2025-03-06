@@ -549,7 +549,7 @@
                 half3 diffuseIndirect = ambient * KD_IndirectLight;
 
                 //Diffuse
-                half3 diffuse = diffuseColor * (diffuseIndirect +  diffuseTerm) + diffuseColor *  aDiffuseTerm * KD_IndirectLight;     
+                half3 diffuse = diffuseColor * (diffuseIndirect +  diffuseTerm * mainLight.color) + diffuseColor *  aDiffuseTerm * KD_IndirectLight;     
 
 
                 half3 specular = specTerm * mainLight.color * fresnelTerm / normalizationTerm + aSpecTerm * fresnelLerp ;
